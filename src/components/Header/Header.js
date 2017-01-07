@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Header.scss';
 
-export const Header = () => (
-  <div>
-    <h1>React Redux Starter Kit</h1>
-  </div>
-);
+import Profile from '../Profile';
+import Cart from '../Cart';
 
-export default Header;
+class Header extends Component {
+  render() {
+    return (
+      <header className="header">
+        <h1>Book store</h1>
+        <Profile profile={this.props.profile} />
+        <Cart cart={this.props.cart} />
+      </header>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  profile : state.profile,
+  cart: state.cart
+});
+
+export default connect(mapStateToProps)(Header);;

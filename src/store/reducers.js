@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux';
 import locationReducer from './location';
+import profileReducer from './profile';
+import cartReducer from './cart';
+import categoriesReducer from './categories';
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     location: locationReducer,
+    profile: profileReducer,
+    cart: cartReducer,
+    categories: categoriesReducer,
     ...asyncReducers
   });
 };
