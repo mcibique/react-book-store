@@ -3,7 +3,9 @@ import './Cart.scss';
 
 export const Cart = (props) => (
   <div className="cart">
-    {props.cart.items.length}
+    <div>{props.cart.items.length}</div>
+    <div>{props.cart.totalPrice}</div>
+    <button type="button" onClick={() => props.clearCart()}>Clear</button>
   </div>
 );
 

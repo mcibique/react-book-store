@@ -10,7 +10,8 @@ export const SEARCH_REQUEST = Symbol('SEARCH_REQUEST');
 const initialState = {
   results: [],
   loading: false,
-  query: ''
+  query: '',
+  category: ''
 };
 
 export default function categoriesReducer (state = initialState, action) {
@@ -20,7 +21,8 @@ export default function categoriesReducer (state = initialState, action) {
         ...state,
         results: [],
         loading: true,
-        query: action.query
+        query: action.query,
+        category: action.category
       }
     }
     case SEARCH_RESPONSE: {
@@ -39,8 +41,8 @@ export default function categoriesReducer (state = initialState, action) {
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const searchRequest = (query) => {
-  return { type: SEARCH_REQUEST, query };
+export const searchRequest = (query, category) => {
+  return { type: SEARCH_REQUEST, query, category };
 }
 
 export const searchResponse = (results) => {
@@ -50,15 +52,13 @@ export const searchResponse = (results) => {
 // ------------------------------------
 // Specialized Action Creator
 // ------------------------------------
-export const search = (query) => {
+export const search = (query, category) => {
   return (dispatch, getState) => {
-    dispatch(searchRequest(query));
+    dispatch(searchRequest(query, category));
 
     return new Promise((resolve) => {
       setTimeout(() => {
-        const fakeResults = new Array(20).fill().map((book, index) => ({ name: 'Book' + index, id: index }));
-
-        console.log('fakeResults', fakeResults);
+        const fakeResults = new Array(20).fill().map((book, index) => ({ name: 'Book' + index, id: index, price: index * 10 }));
         dispatch(searchResponse(fakeResults));
         resolve();
       }, 2000);

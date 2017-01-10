@@ -39,11 +39,19 @@ export const setLoading = (loading) => {
   return { type: CATEGORIES_LOADING, loading };
 }
 
+function shouldFetchCategories(state) {
+  return !state.categories.loading && state.categories.list.length === 0;
+}
+
 // ------------------------------------
 // Specialized Action Creator
 // ------------------------------------
 export const fetchCategories = () => {
   return (dispatch, getState) => {
+    if (!shouldFetchCategories(getState())) {
+      return Promise.resolve();
+    }
+
     dispatch(setLoading(true));
 
     return new Promise((resolve) => {
