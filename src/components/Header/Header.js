@@ -4,7 +4,7 @@ import { clearCart } from '../../store/cart';
 import './Header.scss';
 
 import Profile from '../Profile';
-import Cart from '../Cart';
+import Cart from '../../containers/CartContainer';
 
 class Header extends Component {
   render() {
@@ -12,19 +12,14 @@ class Header extends Component {
       <header className="header">
         <h1 className="header__title">Book store</h1>
         <Profile profile={this.props.profile} />
-        <Cart cart={this.props.cart} clearCart={this.props.clearCart.bind(this)} className="header__cart" />
+        <Cart className="header__cart" />
       </header>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  profile : state.profile,
-  cart: state.cart
+  profile : state.profile
 });
 
-const mapDispatchToProps = {
-  clearCart
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);;
+export default connect(mapStateToProps)(Header);;
