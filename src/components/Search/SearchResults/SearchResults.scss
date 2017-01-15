@@ -1,17 +1,39 @@
 .search-results {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 127, 0, 0.1);
+  padding: 10px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
 
   &__book {
     display: block;
     float: left;
-    width: 300px;
+    width: 150px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     padding: 20px 30px;
     text-align: center;
+
+    &--in-cart {
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: 'in cart';
+        position: absolute;
+        top: 10px;
+        right: -30px;
+        overflow: hidden;
+        background-color: tomato;
+        transform: rotate(45deg);
+        padding: 0 30px;
+      }
+    }
   }
 }

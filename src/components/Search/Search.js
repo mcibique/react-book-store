@@ -16,7 +16,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search">
         <Filter query={this.props.search.query} doSearch={this.props.doSearch.bind(this)} category={this.props.search.category} categories={this.props.categories} />
         <SearchResults {...this.props.search} cart={this.props.cart} addToCart={this.props.addToCart.bind(this)} />
       </div>

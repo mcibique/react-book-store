@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { fetchCategories } from '../../store/categories';
 import './Sidebar.scss';
 
@@ -12,12 +13,13 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <aside className="sidebar">
+      <aside className={ classnames("sidebar", this.props.className) }>
         { this.props.categories.loading ? (
           <span>Loading ...</span>
         ) : (
           <CategoryList categories={this.props.categories.list} />
         )}
+        <div className="sidebar__copyright">Copyright &copy; 2017</div>
       </aside>
     );
   }

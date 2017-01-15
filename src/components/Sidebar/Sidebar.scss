@@ -1,4 +1,10 @@
 .sidebar {
   border: 1px solid #ccc;
   background-color: rgba(127, 127, 0, 0.1);
+  padding: 10px;
+
+  &__copyright {
+    margin-top: 30px;
+    text-align: center;
+  }
 }

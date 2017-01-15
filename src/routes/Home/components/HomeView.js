@@ -4,9 +4,7 @@ import './HomeView.scss';
 import Search from '../../../components/Search';
 
 export const HomeView = () => (
-  <div>
-    <Search />
-  </div>
+  <Search />
 );
 
 export default HomeView;

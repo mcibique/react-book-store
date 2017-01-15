@@ -29,16 +29,22 @@ class Filter extends Component {
 
   render() {
     return (
-      <form name="search" onSubmit={this.submit.bind(this)}>
-        <input type="text" value={this.state.query} onChange={this.onQueryChange.bind(this)} />
+      <form name="search" className="filter" onSubmit={this.submit.bind(this)}>
+        <div>
+          <label htmlFor="query">By name:</label>
+          <input type="text" id="query" value={this.state.query} onChange={this.onQueryChange.bind(this)} />
+        </div>
         {
           this.props.categories.loading ? null : (
-            <select value={this.state.category} onChange={this.onCategoryChange.bind(this)}>
-              <option value=""></option>
-                { this.props.categories.list.map(category => (
-                  <option value={category.name} key={category.id}>{category.name}</option>
-                ))}
-            </select>
+            <div>
+              <label htmlFor="category">By category:</label>
+              <select value={this.state.category} onChange={this.onCategoryChange.bind(this)}>
+                <option value=""></option>
+                  { this.props.categories.list.map(category => (
+                    <option value={category.name} key={category.id}>{category.name}</option>
+                  ))}
+              </select>
+            </div>
           )
         }
         <button type="submit">Search</button>

@@ -4,7 +4,7 @@ import './CategoryList.scss';
 export const CategoryList = (props) => (
   <ul className="category-list">
     { props.categories.map(category => (
-      <li key={category.id}>{category.name}</li>
+      <li className="category-list__item" key={category.id}>{category.name}</li>
       ))
     }
   </ul>

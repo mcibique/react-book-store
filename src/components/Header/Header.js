@@ -10,9 +10,9 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <h1>Book store</h1>
+        <h1 className="header__title">Book store</h1>
         <Profile profile={this.props.profile} />
-        <Cart cart={this.props.cart} clearCart={this.props.clearCart.bind(this)} />
+        <Cart cart={this.props.cart} clearCart={this.props.clearCart.bind(this)} className="header__cart" />
       </header>
     );
   }

@@ -3,7 +3,8 @@ import './Profile.scss';
 
 export const Profile = (props) => (
   <div className="user-profile">
-    {props.profile.userName}
+    <img src="//placehold.it/64/fff" alt="profile" />
+    <div>{ props.profile.userName }</div>
   </div>
 );
 

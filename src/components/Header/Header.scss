@@ -1,4 +1,19 @@
 .header {
   border: 1px solid #ccc;
   background-color: rgba(0, 0, 255, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-left: 25px;
+  position: relative;
+
+  &__title {
+    flex: 1;
+    text-align: left;
+    font-size: 35px;
+  }
+
+  &__cart {
+    margin-left: 20px;
+  }
 }

@@ -1,0 +1,22 @@
+.core-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 720px;
+
+  &__main {
+    flex: 1;
+  }
+}
+
+.main-content {
+  display: flex;
+
+  &__sidebar {
+    width: 210px;
+  }
+
+  &__wrapper {
+    flex: 1;
+  }
+}
