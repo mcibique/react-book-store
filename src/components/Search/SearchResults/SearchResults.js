@@ -12,7 +12,7 @@ export const SearchResults = (props) => (
       ) : null }
       <ul className="search-results__list">
         { props.results.map(book => (
-          <li className={ classnames('search-results__book', { 'search-results__book--in-cart': props.cart.items.includes(book) }) } key={book.id}>
+          <li className={ classnames('search-results__book', { 'search-results__book--in-cart': props.cart.items.some(item => item.id === book.id) }) } key={book.id}>
             <img src="//placehold.it/64x96/fff" />
             <div>
               <div>{ book.name }</div>

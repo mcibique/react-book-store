@@ -1,8 +1,8 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const SEARCH_RESPONSE = Symbol('SEARCH_RESPONSE');
-export const SEARCH_REQUEST = Symbol('SEARCH_REQUEST');
+export const SEARCH_RESPONSE = 'SEARCH_RESPONSE';
+export const SEARCH_REQUEST = 'SEARCH_REQUEST';
 
 // ------------------------------------
 // Reducer

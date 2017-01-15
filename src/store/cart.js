@@ -1,8 +1,8 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const CART_ADD_TO_CART = Symbol('CART_ADD_TO_CART');
-export const CART_CLEAR_CART = Symbol('CART_CLEAR_CART');
+export const CART_ADD_TO_CART = 'CART_ADD_TO_CART';
+export const CART_CLEAR_CART = 'CART_CLEAR_CART';
 
 // ------------------------------------
 // Actions

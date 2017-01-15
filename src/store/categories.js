@@ -1,8 +1,8 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const CATEGORIES_FETCHED = Symbol('CATEGORIES_FETCHED');
-export const CATEGORIES_LOADING = Symbol('CATEGORIES_LOADING');
+export const CATEGORIES_FETCHED = 'CATEGORIES_FETCHED';
+export const CATEGORIES_LOADING = 'CATEGORIES_LOADING';
 
 // ------------------------------------
 // Reducer
